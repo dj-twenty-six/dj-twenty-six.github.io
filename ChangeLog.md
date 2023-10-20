@@ -8,3 +8,5 @@
 ### v1.1.0
 - [ ] add blog shims94
 >>>>>>> 1.1.0/add-blog-shims94
+
+- [ ] merge 완료.
