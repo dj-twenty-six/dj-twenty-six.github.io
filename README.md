@@ -56,3 +56,29 @@ root@c52058cd5124:/usr/local/apache2/htdocs#
 
 ### how2pr
 - https://oss.cashmallow.com/team/how2pr/
+
+
+### Deploy Production
+- merge PR to main
+
+### Deploy Pre-Production
+- [ ] https://dj-twenty-six.web.app
+```bash
+$ firebase deploy
+
+=== Deploying to 'dj-twenty-six'...
+
+i  deploying hosting
+i  hosting[dj-twenty-six]: beginning deploy...
+i  hosting[dj-twenty-six]: found 364 files in /
+✔  hosting[dj-twenty-six]: file upload complete
+i  hosting[dj-twenty-six]: finalizing version...
+✔  hosting[dj-twenty-six]: version finalized
+i  hosting[dj-twenty-six]: releasing new version...
+✔  hosting[dj-twenty-six]: release complete
+
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/dj-twenty-six/overview
+Hosting URL: https://dj-twenty-six.web.app
+```
