@@ -1,6 +1,13 @@
 # DJ26 WEB APP
 
-## LOCAL docker build
+## STG
+|BRANCH|URL|
+|---|:---|
+|dev|https://dj-twenty-six.web.app|
+|stg|https://dj-twenty-six.fly.dev|
+|prd|https://dj-twenty-six.github.io|
+
+### LOCAL docker build
 - https://hub.docker.com/_/httpd
 ```bash
 $ docker build -t my-apache2 .
@@ -9,7 +16,7 @@ REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
 my-apache2   latest    e133bdde4db8   2 minutes ago   173MB
 ```
 
-## LOCAL docker run
+### LOCAL docker run
 ``` bash
 $ sudo docker run -dit --name my-webapp -p 8080:80 my-apache2
 $ sudo docker ps
