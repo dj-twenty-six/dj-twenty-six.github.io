@@ -1,6 +1,6 @@
 # DJ26 WEB APP
 
-## docker build
+## LOCAL docker build
 - https://hub.docker.com/_/httpd
 ```bash
 $ docker build -t my-apache2 .
@@ -9,7 +9,7 @@ REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
 my-apache2   latest    e133bdde4db8   2 minutes ago   173MB
 ```
 
-## docker run
+## LOCAL docker run
 ``` bash
 $ sudo docker run -dit --name my-webapp -p 8080:80 my-apache2
 $ sudo docker ps
@@ -17,7 +17,7 @@ CONTAINER ID   IMAGE        COMMAND              CREATED         STATUS         
 c52058cd5124   my-apache2   "httpd-foreground"   6 seconds ago   Up 5 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   my-webapp
 ```
 
-### into docker
+### LOCAL into docker
 ```bash
 $ sudo docker exec -it my-webapp bash
 
@@ -132,7 +132,7 @@ primary_region = "nrt"
   min_machines_running = 3
   processes = ["app"]
 
-fly deploy
+$ fly deploy
 ==> Verifying app config
 Validating /home/dj26/code/dj-twenty-six.github.io/fly.toml
 Platform: machines
