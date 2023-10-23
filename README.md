@@ -244,3 +244,26 @@ f2d0fcd245b3   nginx_lb:1.3.0   "/docker-entrypoint.…"   4 seconds ago        
 c976e579245b   myblog:1.3.0     "httpd-foreground"       About a minute ago   Up About a minute   0.0.0.0:8052->80/tcp, :::8052->80/tcp   myblog-2
 31d91debe836   myblog:1.3.0     "httpd-foreground"       About a minute ago   Up About a minute   0.0.0.0:8051->80/tcp, :::8051->80/tcp   myblog-1
 ```
+
+### reg docker hub
+- https://hub.docker.com/r/pysatellite/dj-twenty-six.github.io
+```bash
+# https://docs.docker.com/docker-hub/quickstart/#step-5-build-and-push-a-container-image-to-docker-hub-from-your-computer
+$ docker build -t pysatellite/dj-twenty-six.github.io:1.4.1 . 
+
+$ docker images
+REPOSITORY                            TAG       IMAGE ID       CREATED              SIZE
+pysatellite/dj-twenty-six.github.io   latest    b899e2edb307   About a minute ago   174MB
+
+$ docker login
+
+$ docker push pysatellite/dj-twenty-six.github.io:1.4.1
+The push refers to repository [docker.io/pysatellite/dj-twenty-six.github.io]
+5c21f3bab370: Pushed
+b7094d4685d5: Mounted from library/httpd
+87ca57c6f4e9: Mounted from library/httpd
+1343ea427053: Mounted from library/httpd
+8db3e477577e: Mounted from library/httpd
+cb4596cc1454: Mounted from library/httpd
+1.4.1: digest: sha256:6430a9fbf5351361694cad0a07661e7ac236de237cfff8917ec6a0d635a5451a size: 1577
+```
