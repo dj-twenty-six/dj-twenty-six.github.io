@@ -11,3 +11,7 @@
 ### v1.3.0
 - [ ] add lb
 - [ ] add nginx vhost
+
+### v1.4.0
+- [ ] push docker hub
+- [ ] update doc - docker hub
