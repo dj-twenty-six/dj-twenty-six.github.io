@@ -15,3 +15,6 @@
 ### v1.4.0
 - [ ] push docker hub
 - [ ] update doc - docker hub
+
+### v1.5.0
+- [ ] bmt
