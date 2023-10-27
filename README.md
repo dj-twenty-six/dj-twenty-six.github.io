@@ -287,3 +287,38 @@ $ docker compose up -d
 ```
 
 ![image](https://github.com/dj-twenty-six/dj-twenty-six.github.io/assets/87309910/7c805f2b-9950-4e27-aa8f-db1f859ffad7)
+
+- 
+```bash
+$ docker compose -f ./manual-proxy-compose.yml up -d --build
+[+] Building 0.7s (7/7) FINISHED                                                                                                                                                                                                                              docker:default
+ => [load_balancer internal] load build definition from Dockerfile                                                                                                                                                                                                      0.0s
+ => => transferring dockerfile: 114B                                                                                                                                                                                                                                    0.0s
+ => [load_balancer internal] load .dockerignore                                                                                                                                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                                                                                                                                                         0.0s
+ => [load_balancer internal] load metadata for docker.io/library/nginx:1.25.3                                                                                                                                                                                           0.7s
+ => [load_balancer internal] load build context                                                                                                                                                                                                                         0.0s
+ => => transferring context: 34B                                                                                                                                                                                                                                        0.0s
+ => [load_balancer 1/2] FROM docker.io/library/nginx:1.25.3@sha256:add4792d930c25dd2abf2ef9ea79de578097a1c175a16ab25814332fe33622de                                                                                                                                     0.0s
+ => CACHED [load_balancer 2/2] COPY [default.conf, /etc/nginx/conf.d/]                                                                                                                                                                                                  0.0s
+ => [load_balancer] exporting to image                                                                                                                                                                                                                                  0.0s
+ => => exporting layers                                                                                                                                                                                                                                                 0.0s
+ => => writing image sha256:ddbbce8e85c2bc0daf2011afefb40f0450bc3ed1500a414de604293d44fab13c                                                                                                                                                                            0.0s
+ => => naming to docker.io/library/bmt_lb-load_balancer                                                                                                                                                                                                                 0.0s
+[+] Running 2/0
+ ✔ Container bmt_lb-homepage_1-1  Running                                                                                                                                                                                                                               0.0s
+ ✔ Container mproxy               Running                                                                                                                                                                                                                               0.0s
+
+$ docker compose ps
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+
+$ docker compose -f ./manual-proxy-compose.yml ps
+NAME                  IMAGE                                     COMMAND                                          SERVICE         CREATED          STATUS          PORTS
+bmt_lb-homepage_1-1   pysatellite/dj-twenty-six.github.io:bmt   "httpd-foreground"                               homepage_1      7 minutes ago    Up 3 minutes    80/tcp
+mproxy                bmt_lb-load_balancer                      "/docker-entrypoint.sh nginx -g 'daemon off;'"   load_balancer   45 seconds ago   Up 44 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp
+
+$ sudo docker stats --no-stream
+CONTAINER ID   NAME                  CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O   PIDS
+9f4529c2caf2   mproxy                0.00%     7.172MiB / 7.625GiB   0.09%     796B / 0B     0B / 0B     9
+644e9dac4e50   bmt_lb-homepage_1-1   0.01%     22.09MiB / 30MiB      73.62%    1.09kB / 0B   0B / 0B     82
+```
