@@ -10,6 +10,14 @@ services:
       - homepage_1
     links:
       - homepage_1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 10M
+        reservations:
+          cpus: '0.01'
+          memory: 6M
 
   homepage_1:
     image: pysatellite/dj-twenty-six.github.io:bmt
