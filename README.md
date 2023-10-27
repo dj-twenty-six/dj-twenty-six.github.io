@@ -278,6 +278,7 @@ cb4596cc1454: Mounted from library/httpd
 - server start
 - https://docs.docker.com/engine/reference/commandline/compose_up/#options
 ```bash
+# $ docker compose up -d --build --force-recreate
 $ docker compose up -d
 [+] Running 3/3
  ✔ Network dj-twenty-sixgithubio_default       Created                              0.1s
