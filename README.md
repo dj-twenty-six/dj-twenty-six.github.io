@@ -267,3 +267,21 @@ b7094d4685d5: Mounted from library/httpd
 cb4596cc1454: Mounted from library/httpd
 1.4.1: digest: sha256:6430a9fbf5351361694cad0a07661e7ac236de237cfff8917ec6a0d635a5451a size: 1577
 ```
+
+### BMT
+- hosts
+```
+# bmt
+127.0.0.1	homepage.flyio.local
+```
+
+- server start
+```bash
+$ docker compose up -d
+[+] Running 3/3
+ ✔ Network dj-twenty-sixgithubio_default       Created                              0.1s
+ ✔ Container dj-twenty-sixgithubio-homepage-1  Started                              0.0s
+ ✔ Container dj-twenty-sixgithubio-nginx-lb-1  Started                              0.0s
+```
+
+![image](https://github.com/dj-twenty-six/dj-twenty-six.github.io/assets/87309910/7c805f2b-9950-4e27-aa8f-db1f859ffad7)
