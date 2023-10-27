@@ -322,3 +322,6 @@ CONTAINER ID   NAME                  CPU %     MEM USAGE / LIMIT     MEM %     N
 9f4529c2caf2   mproxy                0.00%     7.172MiB / 7.625GiB   0.09%     796B / 0B     0B / 0B     9
 644e9dac4e50   bmt_lb-homepage_1-1   0.01%     22.09MiB / 30MiB      73.62%    1.09kB / 0B   0B / 0B     82
 ```
+
+### Ref
+- [nginx-및-nginx-plus를-사용한-caching](https://nginxstore.com/blog/nginx/nginx-%EB%B0%8F-nginx-plus%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-caching/)
