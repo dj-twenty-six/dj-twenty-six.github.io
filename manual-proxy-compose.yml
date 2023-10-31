@@ -1,0 +1,31 @@
+version: '2'
+name: bmt_lb
+services:
+  load_balancer:
+    build: ./dockerfiles/lb_nginx
+    container_name: mproxy
+    ports:
+      - 80:80
+    depends_on:
+      - homepage_1
+    links:
+      - homepage_1
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 10M
+        reservations:
+          cpus: '0.01'
+          memory: 6M
+
+  homepage_1:
+    image: pysatellite/dj-twenty-six.github.io:bmt
+    deploy:
+      resources: 
+        limits:
+          cpus: '0.02'
+          memory: 30M
+        reservations:
+          cpus: '0.01'
+          memory: 6M

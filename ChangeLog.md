@@ -15,3 +15,11 @@
 ### v1.4.0
 - [ ] push docker hub
 - [ ] update doc - docker hub
+
+### v1.5.0
+- [ ] bmt
+
+
+### v1.8.0
+- https://github.com/dj-twenty-six/101/issues/26
+- cron auto git pull
