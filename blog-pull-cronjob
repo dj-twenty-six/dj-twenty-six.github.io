@@ -1,0 +1,2 @@
+* * * * * sh /usr/local/apache2/app/blog/pull.sh >> /var/log/pull.log 2>&1
+# new crontab file is missing newline before EOF, can't install.
